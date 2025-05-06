@@ -3,6 +3,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const eventRoutes = require('./api/events');
+const journeyRoutes = require('./api/journey');
+const startJourneyAutomation = require('./jobs/actionJob');
+const predictRoute = require("./routes/predict");
+
 
 
 const app = express();
@@ -16,6 +20,13 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/events', eventRoutes);
+
+app.use('/api/journey', journeyRoutes);
+
+app.use("/api", predictRoute);
+
+
+startJourneyAutomation(); 
 
 
 const PORT = process.env.PORT || 5000;
