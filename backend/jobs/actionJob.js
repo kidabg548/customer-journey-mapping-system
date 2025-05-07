@@ -1,5 +1,5 @@
 const cron = require('node-cron');
-const Event = require('../database/eventModel');
+const Event = require('../database/models/Event');
 const { mapToStage } = require('../controllers/analyzeController'); // Reuse this logic
 
 // Simulated action sender

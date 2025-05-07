@@ -1,4 +1,4 @@
-const Event = require('../database/eventModel');
+const Event = require('../database/models/Event');
 
 // Map events to journey stages
 function mapToStage(events) {
